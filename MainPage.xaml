@@ -9,6 +9,10 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <NavigationView Content="NavigationView"/>
+        <NavigationView x:Name="nav"
+            Content="NavigationView"
+            IsSettingsVisible="{Binding ElementName=settingsCheck,Path=IsChecked}" PaneTitle="TALLY COUNTER"
+        />
+
     </Grid>
 </Page>
