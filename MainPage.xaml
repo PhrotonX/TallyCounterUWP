@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource SystemControlAcrylicWindowBrush}">
 
     <Grid>
         <Grid.Resources>
@@ -17,7 +17,6 @@
                   FallbackColor="Black"/>
         </Grid.Resources>
         <NavigationView x:Name="nav"
-            Content="NavigationView"
             IsSettingsVisible="{Binding ElementName=settingsCheck,Path=IsChecked}" PaneTitle="TALLY COUNTER"
         >
             <NavigationView.MenuItems>
@@ -25,6 +24,32 @@
                 <NavigationViewItem Name="NavSearch" Content="Search"/>
                 <NavigationViewItem Name="NavAllCounters" Content="All Counters"/>
             </NavigationView.MenuItems>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock
+                    x:Name="countView" Text="0" FontSize="72" TextAlignment="Center"
+                />
+                <RelativePanel>
+                    <Button
+                        x:Name="incrementCount" Content="+"
+                        RelativePanel.AlignBottomWithPanel="True"
+                        RelativePanel.AlignLeftWithPanel="True" Click="incrementCount_Click"
+                    />
+                    <Button x:Name="decrementCount" Content="-"
+                       RelativePanel.AlignBottomWithPanel="True"
+                       RelativePanel.AlignRightWithPanel="True"
+                    />
+                </RelativePanel>
+            </Grid> 
+            
+
         </NavigationView>
 
     </Grid>

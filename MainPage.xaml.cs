@@ -26,5 +26,33 @@ namespace TallyCounter
         {
             this.InitializeComponent();
         }
+
+        private void TextBlock_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void incrementCount_Click(object sender, RoutedEventArgs e)
+        {
+            string currentCount = this.countView.Text.ToString();
+            int currentCountInt = int.Parse(currentCount);
+            currentCountInt++;
+            
+            this.countView.Text = currentCountInt.ToString();
+        }
+
+        private void decrementCount_Click(object sender, RoutedEventArgs e)
+        {
+            string currentCount = this.countView.Text.ToString();
+            int currentCountInt = int.Parse(currentCount);
+            currentCountInt--;
+
+            this.countView.Text = currentCountInt.ToString();
+        }
     }
 }
